@@ -1,10 +1,16 @@
 window.addEventListener('load', function() {
 	//stran nalozena
 		
-	//Posodobi opomnike
+	var prijavi=function(event){
+		var uporabnik = document.querySelector("#uporabnisko_ime").value;
+		document.querySelector(".pokrivalo").style.display = "none";
+		document.getElementById("uporabnik").innerHTML = uporabnik;
+	}
+	document.querySelector("#prijavniGumb").addEventListener('click', prijavi);
+		//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
-		
+		var i
 		for (i = 0; i < opomniki.length; i++) {
 			var opomnik = opomniki[i];
 			var casovnik = opomnik.querySelector("span");
@@ -16,5 +22,6 @@ window.addEventListener('load', function() {
 		}
 	}
 	setInterval(posodobiOpomnike, 1000);
+	
 	
 });
